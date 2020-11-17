@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function changeImg1() {
+            let value=document.getElementById("cat").src;
+
+            if(value=="http://localhost:63342/jsGamePuzzle/img/cat11.jpg")
+            {
+                document.getElementById("cat").src="img/panda11.jpg";
+                if(document.getElementById("panda").src=="http://localhost:63342/jsGamePuzzle/img/panda21.jpg"){
+                    alert("Winner!");
+                }
+            }
+
+            else
+            {
+                document.getElementById("cat").src="img/cat11.jpg";
+                if(document.getElementById("panda").src=="http://localhost:63342/jsGamePuzzle/img/cat21.jpg"){
+                    alert("Winner!");
+                }
+            }
+
+
+        }
+        function changeImg2() {
+            let value=document.getElementById("panda").src;
+            // alert(value);
+            if(value=="http://localhost:63342/jsGamePuzzle/img/panda21.jpg")
+            {
+                document.getElementById("panda").src="img/cat21.jpg";
+                if(document.getElementById("cat").src=="http://localhost:63342/jsGamePuzzle/img/cat11.jpg"){
+                    alert("Winner!");
+                }
+            }
+
+            else
+            {
+                document.getElementById("panda").src="img/panda21.jpg";
+                if(document.getElementById("cat").src=="http://localhost:63342/jsGamePuzzle/img/panda11.jpg")
+                    alert("Winner!");
+            }
+
+        }
+    </script>
+</head>
+<body>
+<table>
+    <tr>
+        <td><img id="cat" src="img/cat11.jpg" width="400px" height="100px" onclick="changeImg1()"></td>
+    </tr>
+    <tr>
+        <td><img id="panda" src="img/panda21.jpg" width="400px" height="100px" onclick="changeImg2()"> </td>
+    </tr>
+</table>
+
+</body>
+</html>
